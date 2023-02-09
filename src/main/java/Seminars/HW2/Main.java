@@ -13,6 +13,7 @@ public class Main {
 
         System.out.println();
         newList.removeFirst();
+        newList.removeFirst();
         newList.print();
 
         System.out.println();

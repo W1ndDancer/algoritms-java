@@ -4,11 +4,9 @@ import java.util.Iterator;
 
 public class MyLinkedList implements Iterable<Integer> {
     private Node head;
-    private Node tail;
 
     public MyLinkedList() {
         head = null;
-        tail = null;
     }
 
     private boolean isEmpty() {
@@ -25,22 +23,11 @@ public class MyLinkedList implements Iterable<Integer> {
 
     public void addFirst(int data) {
         Node temp = new Node(data);
-        if (isEmpty()) {
-            tail = temp;
-        } else {
-            head.prev = temp;
-        }
         temp.next = head;
         head = temp;
     }
 
     public void removeFirst () {
-        Node temp = head;
-        if (head.next == null) {
-            tail = null;
-        } else {
-            head.next.prev = null;
-        }
         head = head.next;
     }
 
@@ -64,7 +51,6 @@ public class MyLinkedList implements Iterable<Integer> {
 
     public void reverse () {
         if (!isEmpty() && head.next != null) {
-            tail = head;
             Node current = head.next;
             head.next = null;
 
